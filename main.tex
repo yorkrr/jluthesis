@@ -1,6 +1,9 @@
 \documentclass{jluthesis}
 \usepackage{fancyvrb}
 \usepackage{booktabs, multirow, longtable, makecell, subfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame = single, tabsize = 4, fontsize=\footnotesize}
 
 \begin{document}
@@ -11,9 +14,7 @@
 \makecover
 
 
-% 承诺书
-\commitment
-\thispagestyle{style@empty}
+
 % 中文摘要
 \input{data/cabstract}
 \thispagestyle{style@empty}
@@ -24,7 +25,7 @@
 
 % 目录
 \newpage
-\pagenumbering{gobble} 
+\pagenumbering{gobble}
 {
     \pagestyle{style@empty}
     \tableofcontents
@@ -32,7 +33,7 @@
 }
 
 % 正文
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 \setcounter{page}{1}
 \pagestyle{style@normal}
 
@@ -45,9 +46,11 @@
 
 \input{data/chapter04.tex}
 
+%\input{data/chapter05.tex}
+
 % 参考文献
 \input{data/reference.tex}
 % 致谢
 \input{data/acknowledgement.tex}
 
-\end{document}
+\end{document} 

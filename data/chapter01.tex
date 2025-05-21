@@ -1,228 +1,39 @@
-\chapter{引论}
+\chapter{绪论}
 \label{chap:introduction}
 
-本章为吉林大学本科生毕业论文 \LaTeX 模板的示例文档\footnote{本模板适配了吉林大学计算机科学
-与技术学院的毕业论文格式，参考了《附件Z-3：学院本科毕业论文（设计）撰写参考模板》中的格式要求，
-适配作者为geekifan，参见 GitHub 主页\url{https://github.com/geekifan}。}，对写作过程
-中常见用法和问题进行介绍说明。第一章的内容参考了北京大学硕士学位论文模板\footnote{\url{https://github.com/iofu728/pkuthss}}
-的相关章节。
+\section{粒子物理与标准模型}
+\label{sec:onepone}
 
-\section{封面及配置文件相关}
-\label{sec:cover-pkuthssinfo}
+物理是研究世界、理解世界、改变世界的学问。人类对世界运行规则的理解从牛顿力学，到分析力学，再到量子力学，以至量子场论，一路走过。量子场论作为物理发展史中的一枚皇冠，受到无数新生学者的追求和膜拜。粒子物理就是这样一门在量子场论基础上发展出来的学科。
 
-本模板使用 \verb|jluthesis.cfg| 配置文件对封面的相关信息进行设置。示例配置如下：
+粒子物理研究世界的本质。狭义地说，它研究构成万事万物的费米子、在其中传递相互作用的媒介子，以及赋予部分物质质量的上帝粒子。
 
-\begin{Verbatim}
-    \ProvidesFile{jluthesis.cfg}
-    \def\cover@thesis{毕业设计（论文）}
-    \def\cover@ctitlef{第一行}
-    \def\cover@ctitles{第二行}
-    \def\cover@ctitle{中文完整题目}
-    \def\cover@etitlef{The first}
-    \def\cover@etitles{The second}
-    \def\cover@etitle{English Title}
-    \def\cover@school{某某学院}
-    \def\cover@major{某某专业}
-    \def\cover@author{张三}
-    \def\cover@eauthor{Zhang San}
-    \def\cover@studentid{11111111}
-    \def\cover@mentor{李四}
-    \def\cover@ementor{Li Si}
-    \def\cover@time{2023 年 6 月}
-    \def\abstract@cabstract{摘\hspace{1em}要}
-    \def\abstract@eabstract{Abstract}
-    \def\abstract@ckeywords{关键词：}
-    \def\abstract@ekeywords{Keywords:}
-    \def\commitment@title{吉林大学学士学位论文（设计）承诺书}
-    \def\commitment@content{本人郑重承诺：所呈交的学士学位毕业论文（设计），
-    是本人在指导教师的指导下，独立进行实验、设计、调研等工作基础上取得的成果。
-    除文中已经注明引用的内容外，本论文（设计）不包含任何其他个人或集体
-    已经发表或撰写的作品成果。对本人实验或设计中做出重要贡献的个人或集体，
-    均已在文中以明确的方式注明。本人完全意识到本承诺书的法律结果由本人承担。}
-    \def\commitment@sign{承诺人：}
-    \def\commitment@time{2023年5月29日}
-    \endinput
-\end{Verbatim}
+标准模型是目前粒子物理学科中最广泛适用的理论框架，它的建立和不断完善汇聚了一代又一代物理学家的智慧和努力，其中包括盖尔曼、茨威格等人提出的夸克模型[1]，布罗特、恩格勒、希格斯等人提出的希格斯机制[2]，格拉肖、萨拉姆、温伯格等人提出的电弱统一理论[3]等。
 
+具体来说，标准模型所描述的基本粒子有：三代夸克，包含上、下、奇、粲、顶、底夸克；三代轻子，包含电子、电子中微子、缪子、缪子中微子、陶子、陶子中微子；媒介子，包含光子、胶子、W及Z玻色子；以及希格斯粒子。此外还包含各基本粒子所对应的反粒子。标准模型所描述的基本相互作用有：电磁相互作用、强相互作用、弱相互作用。然而，引力相互作用尚未被纳入到该框架中，如何将其与标准模型统一仍是现代物理学未解决的难题。
 
-\section{字体设定}
-\label{sec:fontset}
+标准模型的“最后一块拼图”希格斯粒子于2012年被欧洲大型强子对撞机上运行的两个探测器ATLAS[4]和CMS[5]所发现。回望历史，一个必须承认的事实是，物理学中辉煌成果的取得越来越依赖于全球物理学家的通力合作。
 
-本模板的默认中文字体为宋体，英文字体为 Times New Roman。本项目不包含任何所需的字体文件。如需使用 Overleaf，请自行在项目中上传 Overleaf 缺失的宋体文件，然后在 \verb|jluthesis.cls| 文件中将 
-\begin{Verbatim}
-\setCJKfamilyfont{cusong}[AutoFakeBold = {2.17}]{SimSun}
-\end{Verbatim}
-修改为
-\begin{Verbatim}
-\setCJKfamilyfont{cusong}[AutoFakeBold = {2.17}]{/path/to/simsun.ttf}
-\end{Verbatim}
+\section{量子纠缠与高能物理的结合}
+\label{sec:oneptwo}
 
-\section{承诺书}
-\label{sec:commitment}
+量子纠缠是量子力学中具有深刻物理意义的现象。在量子信息领域，纠缠是量子计算和量子通信的关键资源。
 
-本模板自带承诺书。请核对该模板使用的承诺书与学院使用的承诺书是否一致。如需去除承诺书一页。请将\verb|main.tex|中的\verb|\commitment|注释或删除。
+从本质上来说，量子力学提供了解释世界的全新视角以及可行的数学工具，因此将量子力学的观点应用到高能物理研究中是极为自然的。在过去，受限于实验装置和分析手段，在对撞机实验的高能标环境下对量子纠缠的研究尚未能够广泛地铺展开。如今，伴随着人工智能和机器学习浪潮的兴起以及蓬勃发展，越来越多针对海量数据进行处理的有效手段被开发出来。机器学习方法在高能物理中的应用也进一步催化了高能条件下对于量子纠缠现象的研究。2024年7月，大型强子对撞机上的ATLAS探测器首次发现顶夸克对的量子纠缠[6]，展现了利用对撞机探索量子力学基础问题的巨大潜力。
 
-\section{摘要部分}
-\label{sec:abstract}
+目前，高能对撞机环境下对量子纠缠现象的研究关注点集中在出射粒子的自旋上[7]。这主要是因为对于自旋，量子层析技术已为其提供了足够可行有效的计算范式[8]。利用衰变末态产物的运动学信息能够完整建立出射粒子对的自旋关联矩阵信息，进而使对纠缠存在与否的判断成为可能。
 
-请在\verb|cabstract.tex|中书写中文摘要，在\verb|eabstract.tex|中书写英文摘要。
+\section{研究主要内容和意义}
+\label{sec:onepthree}
 
+尽管在如上的交叉领域已开展了部分研究，但在大型强子对撞机上对于$ \tau^+ \tau^- $系统的纠缠的检验尚存在困难。这主要是因为$ \tau $子在衰变过程中会产生中微子，而中微子难以与对撞机中的探测器发生反应，导致中微子运动学信息的缺失，从而给$ \tau^+ \tau^- $系统自旋密度矩阵信息的重建造成障碍。
 
-\section{图表相关}
-\label{sec:table-figure}
+在该背景下，本研究主要关注在质子-质子对撞过程中产生的$ \tau^+ \tau^- $粒子之间的纠缠，利用机器学习手段重建量子层析所需要的末态粒子的运动学信息，最终计算该系统自旋关联矩阵的各矩阵元，尝试给出关于其纠缠存在与否的定性判断。该研究对量子力学基础问题的回答具有重要意义，在一定程度上能为后人的探索带来启发。
 
-\subsection{表格样例}
-\label{sec:table-example}
+重建过程中所使用的机器学习方法主要包括扩散模型[9][10]和Transformer模型[11]，以及在二者基础上构建获得的OmniLearn生成模型[12][7]。机器学习与粒子物理的深度融合越来越成为分析手段创新的趋势，本研究所采用的架构相比传统的丢失质量计算器(Missing Mass Calculator)方法[13]具备明显优势，具有一定的推广意义。
 
-一般学术论文使用三线表(如表~\ref{tab:example-table-basic})，需要依赖宏包\verb|booktabs|，使用\verb|\toprule|，\verb|\midrule|，\verb|\bottomrule|控制三线。
-此外表序和表名位于表格的上方。
-如果需要对表格内进行脚注，可通过\texttt{minipage}中嵌套\texttt{tabular}来实现，具体可参考Stack Overflow\footnote{\url{https://stackoverflow.com/questions/2888817/footnotes-for-tables-in-latex}}。
+\section{论文结构排布}
+\label{sec:onepfour}
 
-{\begin{longtable}[c]{c*{7}{r}}
-\caption[续表]{续表样例表。}
-\label{tab:example-table-continue}\\
-\toprule[1.5pt]
- \multicolumn{1}{c}{年龄} & 性别 & \multicolumn{1}{c}{cp} & \multicolumn{1}{c}{静息血压} & \multicolumn{1}{c}{chol}
-& \multicolumn{1}{c}{空腹血糖>} & \multicolumn{1}{c}{restecg} & \multicolumn{1}{c}{thalachh} \\
-\multicolumn{1}{c}{(岁)} & & \multicolumn{1}{c}{胸痛型}&
-\multicolumn{1}{c}{毫米汞柱}& \multicolumn{1}{c}{胆固醇}& \multicolumn{1}{c}{
-   120 mg/dl}& 静息状态 & 最大心率 \\\midrule[1pt]
-\endfirsthead
-\multicolumn{8}{c}{续表~\thetable\hskip1em 续表样例表。}\\
-\toprule[1.5pt]
- \multicolumn{1}{c}{年龄} & 性别 & \multicolumn{1}{c}{cp} & \multicolumn{1}{c}{静息血压} & \multicolumn{1}{c}{chol}
-& \multicolumn{1}{c}{空腹血糖>} & \multicolumn{1}{c}{restecg} & \multicolumn{1}{c}{thalachh} \\
-\multicolumn{1}{c}{(岁)} & & \multicolumn{1}{c}{胸痛型}&
-\multicolumn{1}{c}{毫米汞柱}& \multicolumn{1}{c}{胆固醇}& \multicolumn{1}{c}{
-   120 mg/dl}& 静息状态 & 最大心率 \\\midrule[1pt]
-\endhead
-\hline
-\multicolumn{8}{r}{续下页}
-\endfoot
-\endlastfoot
-63 & 1 & 3 & 145 & 233 & 1 & 0 & 150 \\
-37 & 1 & 2 & 130 & 250 & 0 & 1 & 187 \\
-41 & 0 & 1 & 130 & 204 & 0 & 0 & 172 \\
-56 & 1 & 1 & 120 & 236 & 0 & 1 & 178 \\
-57 & 0 & 0 & 120 & 354 & 0 & 1 & 163 \\
-57 & 1 & 0 & 140 & 192 & 0 & 1 & 148 \\
-56 & 0 & 1 & 140 & 294 & 0 & 0 & 153 \\
-44 & 1 & 1 & 120 & 263 & 0 & 1 & 173 \\
-52 & 1 & 2 & 172 & 199 & 1 & 1 & 162 \\
-57 & 1 & 2 & 150 & 168 & 0 & 1 & 174 \\
-54 & 1 & 0 & 140 & 239 & 0 & 1 & 160 \\
-48 & 0 & 2 & 130 & 275 & 0 & 1 & 139 \\
-49 & 1 & 1 & 130 & 266 & 0 & 1 & 171 \\
-64 & 1 & 3 & 110 & 211 & 0 & 0 & 144 \\
-\bottomrule[1.5pt]
-\end{longtable}
-\footnotesize 注：数据来源于Kaggle Heart Attack Analysis \& Prediction Data Set。}
+论文的剩余部分将按如下结构展开：第二章简述量子纠缠和量子层析方法的基本原理，以及在$ pp\rightarrow \tau^+ \tau^- $过程中的具体应用；第三章简述扩散模型和Transformer模型的基本原理，介绍OmniLearn生成模型的具体架构和相应的训练过程；第四章展示利用机器学习方法得到的各项结果，并与MMC方法进行比较；第五章是全文的总结，并重点阐述下一步工作计划。
 
-如需要注明表格中数据来源，则可使用类似的方式，见表~\ref{tab:example-table-source-foot}。
-
-\begin{table*}[htb]
-    \centering
-    \begin{minipage}[t]{0.55\linewidth} %
-        \caption[表格脚注样例表]{表格脚注样例表。表名可通过中括号添加缩略名。}
-        \label{tab:example-table-basic}
-        \begin{small}
-        \begin{tabular}{@{}lccccc@{}}
-         \toprule[1.5pt]
-         & \textbf{X} & \textbf{Y} & \textbf{Z} & \textbf{N} & \textbf{M} \\
-         \midrule[1pt]
-            默认        & 99.99 & 99.99 & 99.99 & 99.99\footnote{表格中的脚注1} & 99.99 \\
-          \quad w/o X   & 99.99 & 99.99 & 99.99 & 99.99 & 99.99 \\
-          \quad w/o Y   & 99.99 & 99.99 & 99.99 & 99.99 & 99.99 \\
-          \quad w/o Z   & 99.99\footnote{表格中的脚注2} & 99.99 & 99.99 & 99.99 & 99.99 \\
-          \quad w/o N   & 99.99 & 99.99 & 99.99 & 99.99 & 99.99 \\
-          \quad w/o M   & 99.99 & 99.99 & 99.99 & 99.99 & 99.99 \\
-          \bottomrule[1.5pt]
-        \end{tabular}
-        \end{small}
-    \end{minipage}
-\end{table*}
-
-\begin{table*}[htbp]
-   \centering
-   \caption[数据来源注释表]{表格数据来源注释样例表。}
-   \label{tab:example-table-source-foot}
-   \begin{minipage}[t]{0.9\textwidth}
-   \begin{small}
-   \begin{tabular}{@{}l|ccc|ccc@{}}
-   \toprule
-   \multirow{2}{*}{\textbf{Model}} & \multicolumn{3}{c|}{\textbf{数据集A}} & \multicolumn{3}{c}{\textbf{数据集B}} \\ \cmidrule(l){2-7} 
-    & \textbf{指标a}(\%) & \textbf{指标b}(\%) & \textbf{指标c} & \textbf{指标a} (\%) & \textbf{指标b}(\%) & \textbf{指标c} \\ \midrule
-    Devlin et al.\cite{devlin2018bert}      &99.99  & 99.99  & 99.99  &99.99  & 99.99  & 99.99  \\
-    Yang et al.\cite{yang2019xlnet}      &99.99  & 99.99  & 99.99  &99.99  & 99.99  & 99.99  \\
-    \bottomrule
-   \end{tabular}\\[6pt]
-   \footnotesize 注：数据来源XXXXXX。\\
-   \end{small}
-   \end{minipage}
-\end{table*}
-
-当表格较大，不能在一页内打印时，可以“续表”的形式另页打印，可使用宏包\verb|longtable|实现，如表~\ref{tab:example-table-continue}。
-
-
-\subsection{图片样例}
-\label{sec:figure-example}
-
-\begin{figure}[htb]
-  \centering
-  \subfloat[吉林大学校徽]{
-    \label{sfig:example-fig-logo-fig}
-    \includegraphics[height=2.5cm]{figures/jlu-fig-logo}}\hspace{4em}
-  \subfloat[吉林大学中文校名]{
-    \label{sfig:example-fig-logo-text}
-    \includegraphics[height=2.5cm]{figures/jlu-text-logo}}
-  \caption{包含子图形的大图形}
-  \label{fig:example-fig-subfloat}
-\end{figure}
-
-当需要插入多个子图的时候，可以选用宏包\verb|subfloat|，不推荐使用
-\verb|subfigure| 和 \verb|subtable|。
-
-若使用继承于\verb|subfigure|的宏包，例如\verb|subfloat|、\verb|subfigure|等，则可直接使用引用\verb|\ref{sfig:xxxx}|引用子图label，如图~\ref{sfig:example-fig-logo-fig}。
-否则需要引用主图，再单独标注子图序号，以便符合学位论文要求。
-
-此外，与表格相反，图序和图名需要位于图片的下方。
-如果含有子图，每个子图需要具有相应的子图名。
-
-
-如果需要并排使用两个独立的图形，分别编排图序，则可使用\verb|minipage|，如图~\ref{fig:example-fig-abreast-1}和图~\ref{fig:example-fig-abreast-2}。
-
-\begin{figure}[htb]
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \includegraphics[height=2cm]{figures/jlu-fig-logo}
-  \caption{吉林大学校徽}
-  \label{fig:example-fig-abreast-1}
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \includegraphics[height=2cm]{figures/jlu-text-logo}
-  \caption{吉林大学中文校名}
-  \label{fig:example-fig-abreast-2}
-\end{minipage}
-\end{figure}
-
-\section{公式}
-\label{sec:equation}
-
-公式使用通用\LaTeX{}规范即可。对于复杂公式需求，可使用\verb|amsmath|宏包结合Mathpix\footnote{\url{https://mathpix.com/}}等自动化识别工具。
-
-\begin{multline*}
-\int_a^b\biggl\{\int_a^b[f(x)^2g(y)^2+f(y)^2g(x)^2]
- -2f(x)g(x)f(y)g(y)\,dx\biggr\}\,dy \\
- =\int_a^b\biggl\{g(y)^2\int_a^bf^2+f(y)^2
-  \int_a^b g^2-2f(y)g(y)\int_a^b fg\biggr\}\,dy
-\end{multline*}
-
-上述公式来源于刘宝碇的《不确定规划》\cite{liu2003uncertain}。
-
-\section{参考文献}
-\label{sec:bibtex}
-
-参考文献使用\verb|gb7714-2015|bibstyle进行管理，具体引用命令与日常使用类似，
-例如\verb|\cite{}|。使用本模板之前，请先按照该仓库\footnote{\url{https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style}}，
-将相关bibstyle进行安装，或将其bst文件放入项目目录下直接使用。

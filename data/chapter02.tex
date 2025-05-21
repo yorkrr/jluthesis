@@ -1,3 +1,171 @@
-\chapter{模型2}
+\chapter{理论基础部分}
+\label{chap:theory}
 
-模型2实现细节。
+\section{量子纠缠原理}
+\label{sec:twopone}
+
+\subsection{纯态和混合态}
+\label{sec:twoponepone}
+
+由于关注两个粒子自旋之间的纠缠，而自旋只有两个本征值，因此可以将$ \tau^+ \tau^- $对的自旋视为二量子比特系统。其中两个单比特量子态分别来自子系统$ \mathcal{A} $和子系统$ \mathcal{B} $，即$ \tau^+ $和$ \tau^- $，并分别是希尔伯特空间$ H_{\mathcal{A}} $和$ H_{\mathcal{B}} $中的态矢。二比特量子态存在于希尔伯特空间$ H_{\mathcal{A}} \otimes H_{\mathcal{B}} $中。
+
+任意一个能够表示为狄拉克符号中的右矢形式的态都是纯态。对于一个纯态$ \ket{\psi} $，与之相伴的密度矩阵，亦即它的投影算符，为$ \rho = \ket{\psi} \bra{\psi} $。对于纯态，有$ \mathrm{Tr}(\rho^2)=1 $。
+
+混合态无法被表示为一个态矢，而只能表示为密度矩阵的形式。混合态的密度矩阵是各纯态密度矩阵概率性的混合，有
+\begin{equation*}
+\rho_{mixed}=\sum_{a=1}^N p_a\rho_a ,\quad \sum_{a=1}^N p_a=1,
+\tag{2.1}
+\end{equation*}
+\noindent 其中$ p_a $是系综内子态$ a $的占比，$ \rho_a $是子态$ a $的投影算符。对于混合态，有$ \mathrm{Tr}(\rho^2)<1 $。
+
+由于对撞机上存在大量的$ \tau^+ \tau^- $对，任意一对$ \tau^+ \tau^- $粒子都是某一种二比特纯态，各种不同的纯态以不同的统计频率混合，因此统计完成后的二比特系综作为研究对象是一个混合态。
+
+\subsection{泡利分解与自旋关联}
+\label{sec:twoponeptwo}
+
+无论是纯态还是混合态，都能够以密度矩阵的形式表示。对于单量子比特，其密度矩阵可以通过泡利分解被表示为
+\begin{equation*}
+\rho=\frac{1}{2} \left( \mathbb{I}_2+\sum_{i} B_i \sigma_i \right),
+\tag{2.2}
+\end{equation*}
+\noindent 其中$\sigma_i(i=1, 2, 3)$是泡利矩阵，系数$B_i$描述自旋在不同方向上的极化程度。
+
+类似的，对于二量子比特系综，其密度矩阵仍能够遵循泡利分解的形式[13]
+\begin{equation*}
+\rho=\frac{1}{4} \left( \mathbb{I}_2\otimes \mathbb{I}_2+\sum_{i}B_i^{\mathcal{A}} \sigma_i\otimes \mathbb{I}_2+\sum_{j}B_{j}^{\mathcal{B}} \mathbb{I}_2\otimes \sigma_j+\sum_{ij}C_{ij}\sigma_i\otimes\sigma_j \right),
+\tag{2.3}
+\end{equation*}
+\noindent $ i, j=1, 2, 3 $，其中$B_{i}^{\mathcal{A}}$描述$\tau^+$自旋的净极化程度，$B_{j}^{\mathcal{B}}$描述$\tau^-$自旋的净极化程度，$C_{ij}$描述$\tau^+$与$\tau^-$间的自旋关联。量子层析过程就是定下所有$\{ B_{i}^{\mathcal{A}}, B_{j}^{\mathcal{B}}, C_{ij} \}$系数的过程，这也意味着密度矩阵$\rho$得以被完整重建。
+
+\subsection{纠缠态与纠缠判据}
+\label{sec:twoponepthree}
+
+对于两体混合态，若其各子态的密度矩阵都能够写成两个子系统密度矩阵的张量积
+\begin{equation*}
+\rho=\sum_{a=1}^{N}p_a\rho_{a}^{\mathcal{A}}\otimes \rho_{a}^{\mathcal{B}},
+\tag{2.4}
+\end{equation*}
+\noindent 其中$p_a$是各子态的概率分布，$\rho_{a}^{\mathcal{A}}$和$\rho_{a}^{\mathcal{B}}$是子系统的任意能够满足以上条件的密度矩阵，则该混合态是可分态，不存在纠缠。反之则是纠缠态。$N=1,p_1=1$的特例对应纯态是否可分的情形。
+
+然而，该定义在处理复杂问题时并不实用。Peres-Horodecki判据，亦被称为部分转置正定(PPT)判据[14][15]，是本研究采用的更利于计算的纠缠判断方法。PPT判据指出，对于两体密度矩阵，若其经过部分转置(以对子系统$\mathcal{B}$操作为例)后得到的算符$\rho^{T_{\mathcal{B}}}$的本征值存在负值，则该密度矩阵表示纠缠态。更有必要强调的是，该判据对于所研究的$2\otimes2$维情形是充分必要条件。
+
+在此基础上，应用上一节泡利分解形式中包含自旋关联矩阵在内的15个系数，可将纠缠存在依据进一步化为如下四个充分条件，并且只需满足其中之一[16]
+\begin{equation*}
+\begin{aligned}
+\lvert C_{11}+C_{22} \rvert >1+C_{33},\\
+\lvert C_{11}-C_{22} \rvert >1-C_{33}.
+\end{aligned}
+\tag{2.5}
+\end{equation*}
+针对前两个充分条件，对不等式移项后定义
+\begin{equation*}
+\mathcal{O}_{E}^{\pm}=\pm C_{11}\pm C_{22}-C_{33}-1,
+\tag{2.6}
+\end{equation*}
+\noindent 当$\mathcal{O}_{E}^{\pm}>0$时粒子间存在纠缠。
+
+此外，在量子信息领域，并发度$\mathcal{C}$[17]也是常用的纠缠判据。并发度定义为
+\begin{equation*}
+\mathcal{C}(\rho)=\max(0, \lambda_1- \lambda_2- \lambda_3- \lambda_4),
+\tag{2.7}
+\end{equation*}
+\noindent 其中$\lambda_i(i=1, 2, 3, 4)$是矩阵$R_{\rho}$按降序排列的四个本征值，并有
+\begin{equation*}
+R_{\rho}=\sqrt{\sqrt{\rho}\tilde{\rho}\sqrt{\rho}}, \quad \tilde{\rho}=(\sigma_2\otimes\sigma_2)\rho^{\ast}(\sigma_2\otimes\sigma_2),
+\tag{2.8}
+\end{equation*}
+\noindent 当$\mathcal{C}>0$时粒子间存在纠缠。
+
+\section{量子层析原理}
+\label{sec:twoptwo}
+
+\subsection{产生过程自旋密度矩阵}
+\label{sec:twoptwopone}
+
+对于二对二散射过程 $\mathcal{X} \mathcal{Y} \rightarrow  \mathcal{A} \mathcal{B} $，其反应率可以通过散射截面$\sigma ( \mathcal{X} \mathcal{Y} \rightarrow \mathcal{A} \mathcal{B} )$表示，在量子场论中散射截面又可由散射振幅计算。对初态自旋求平均，末态自旋求和，有
+\begin{equation*}
+\sigma( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )=\int \text{d}\Pi \overline{\sum_{\text{initial}}} \sum_{ab, \overline{a} \overline{b}} M( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )_{a\overline{a}} M^{\ast}( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )_{b\overline{b}},
+\tag{2.9}
+\end{equation*}
+\noindent 其中$ab, \overline{a} \overline{b}=++, +-, -+, --,$ 分别是粒子$\mathcal{A}$和粒子$\mathcal{B}$的自旋指标，以表示矩阵的四维。
+
+定义“产生过程自旋密度矩阵”
+\begin{equation*}
+R_{ab,\overline{a} \overline{b} }=\overline{\sum_{\text{initial}}} M( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )_{a\overline{a}} M^{\ast}( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )_{b\overline{b}},
+\tag{2.10}
+\end{equation*}
+\noindent 可将(2.9)式改写为
+\begin{equation*}
+\sigma( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B} )=\int \text{d}\Pi \sum_{ab, \overline{a} \overline{b}} R_{ab,\overline{a} \overline{b} }.
+\tag{2.11}
+\end{equation*}
+由(2.11)式可知，当粒子$\mathcal{A}$和$\mathcal{B}$自旋均为1/2时，$R_{ab,\overline{a} \overline{b} }$是一个$4\times 4$的密度矩阵，因此可以按(2.3)式泡利分解。
+
+\subsection{衰变过程自旋密度矩阵}
+\label{sec:twoptwoptwo}
+为了获取粒子对$ \mathcal{A} \mathcal{B} $的自旋信息，要求粒子$ \mathcal{A}$和$\mathcal{B}$能进一步发生衰变。以粒子$ \mathcal{A}$为例，考虑 $\mathcal{A}$的两体衰变过程，定义“衰变过程自旋密度矩阵”
+\begin{equation*}
+\Gamma_{ab}^{ \mathcal{A}}=M( \mathcal{A} \rightarrow a_1 a_2)_{a} M^{\ast} ( \mathcal{A} \rightarrow a_1 a_2)_{b},
+\tag{2.12}
+\end{equation*}
+\noindent 可知$\Gamma_{ab}^{ \mathcal{A}}$是$2\times 2$的密度矩阵。
+利用窄宽度近似， $\mathcal{A} \mathcal{B} $粒子产生过程与衰变过程的散射截面能够被描述在一起：
+\begin{equation*}
+\sigma \left( \mathcal{X} \mathcal{Y}  \rightarrow  \mathcal{A} \mathcal{B}  \rightarrow (a_1 a_2)(b_1 b_2) \right)=\int \text{d}\Pi \sum_{ab, \overline{a} \overline{b}} \left( \Gamma_{ab}^{ \mathcal{A}} R_{ab,\overline{a} \overline{b} } \Gamma_{\overline{a} \overline{b}}^{ \mathcal{B} } \right).
+\tag{2.13}
+\end{equation*}
+将总相空间$\text{d}\Pi $分为粒子 $\mathcal{A}$其中一个衰变产物$a_1$的仅关于角度的相空间$\text{d}\Omega^{ \mathcal{A}}$，其他所有剩余的(与$a_1$和$a_2$都有关)相空间$\text{d}\Pi^{ \mathcal{A}}$，以及粒子$ \mathcal{B}$ 其中一个衰变产物$b_1$的角度相空间$\text{d}\Omega^{ \mathcal{B} }$，其他所有剩余的相空间$\text{d}\Pi^{ \mathcal{B} }$。其后对剩余相空间进行积分，积分结果用$\tilde{\Gamma}_{ab}^{ \mathcal{A}}$，$\tilde{\Gamma}_{\overline{a} \overline{b}}^{ \mathcal{B} }$表示，有
+\begin{equation*}
+\begin{aligned}
+\int \text{d}\Pi \sum_{ab, \overline{a} \overline{b}} \left( \Gamma_{ab}^{ \mathcal{A}} R_{ab,\overline{a} \overline{b} } \Gamma_{\overline{a} \overline{b}}^{ \mathcal{B} } \right)
+&=\int \text{d}\Omega^{ \mathcal{A}} \text{d}\Pi^{ \mathcal{A}} \text{d}\Omega^{ \mathcal{B} } \text{d}\Pi^{ \mathcal{B} } \sum_{ab, \overline{a} \overline{b}} \left( \Gamma_{ab}^{ \mathcal{A}} R_{ab,\overline{a} \overline{b} } \Gamma_{\overline{a} \overline{b}}^{ \mathcal{B} } \right),\\
+&=\int \text{d}\Omega^{ \mathcal{A}} \text{d}\Omega^{ \mathcal{B} } \sum_{ab, \overline{a} \overline{b}} \left( \tilde{\Gamma}_{ab}^{ \mathcal{A}} R_{ab,\overline{a} \overline{b} } \tilde{\Gamma}_{\overline{a} \overline{b}}^{ \mathcal{B} } \right).
+\end{aligned}
+\tag{2.14}
+\end{equation*}
+由(2.14)式可知，$\tilde{\Gamma}_{ab}^{ \mathcal{A}}$仍是$2\times 2$的矩阵，并可以按(2.2)式进行泡利分解得到展开式。选定一个参考方向设置极角和方位角，将角空间$\Omega^{ \mathcal{A}}$写成三分量的形式$\Omega_i=(\cos  \phi \sin \theta ,\sin \phi \sin \theta ,\cos  \theta )$, 在粒子 $\mathcal{A}$的静止参考系下该展开式可以写作[8]
+\begin{equation*}
+\tilde{\Gamma}_{ab}^{\mathcal{A}}(\Omega_i)=\frac{1}{2} \Gamma^{\mathcal{A}} (\delta_{ab} +\sum_{i} B^{\mathcal{A}} (\kappa \Omega_i )\sigma_{i,ab}),
+\tag{2.15}
+\end{equation*}
+\noindent 其中$\kappa$ 称为自旋分析能力，其大小与未被积分的衰变产物相联系，反映了该衰变产物的运动学信息与母粒子自旋信息的相关程度。
+
+\subsection{微分散射截面与自旋关联矩阵的函数关系构建}
+\label{sec:twoptwopthree}
+对于(2.13)式，将(2.14)(2.15)式代入该式右侧中，并将$R_{ab,\overline{a} \overline{b}}$改写为泡利分解的形式，最后对自旋指标求和而不进行相空间的积分，可以推导出微分散射截面
+\begin{equation*}
+\frac{1}{\sigma} \frac{\text{d}^4\sigma}{\text{d}^2\Omega^{\mathcal{A}} \text{d}^2\Omega^{\mathcal{B}}}=\frac{1}{(4\pi )^2} (1+\sum_i (\kappa^{\mathcal{A}} B_i^{\mathcal{A}} \Omega_i^{\mathcal{A}} + \kappa^{\mathcal{B}} B_i^{\mathcal{B}} \Omega_i^{\mathcal{B}})+\sum_{i, j} \kappa^{\mathcal{A}} \kappa^{\mathcal{B}} \Omega_i^{\mathcal{A}} C_{ij} \Omega_j^{\mathcal{B}}).
+\tag{2.16}
+\end{equation*}
+\noindent 该式将衰变产物的角分布与密度矩阵$\rho$的15个系数联系在一起，从而为密度矩阵完整信息的重建提供了实验上可行的方案。
+
+对角度相空间中的$\phi^ \mathcal{A} $ 与$\phi^ \mathcal{B} $ 进行积分，可得
+\begin{equation*}
+\frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d} \cos   \theta_i^ \mathcal{A}    \text{d}\cos   \theta_j^ \mathcal{B}  }= -\frac{1}{4} (1+\kappa^ \mathcal{A}   B_i^ \mathcal{A}   \cos  \theta_{i}^{ \mathcal{A}  } + \kappa^ \mathcal{B}   B_j^ \mathcal{B}   \cos  \theta_{j}^{ \mathcal{B}  } + \kappa^ \mathcal{A}   \kappa^ \mathcal{B}   C_{ij} \cos  \theta_{i}^{ \mathcal{A}  } \cos  \theta_{j}^{ \mathcal{B}  } ),
+\tag{2.17}
+\end{equation*}
+\noindent 其中$\theta_{i}^{ \mathcal{A}  }$ ($\theta_{j}^{ \mathcal{B}  }$ )是在粒子 $\mathcal{A}$  (粒子$ \mathcal{B}$  )的静止参考系下，衰变产物$a_1$($b_1$)的动量方向与第i(j)个坐标轴之间的夹角。
+
+(2.17)式可以进一步变换[8]为
+\begin{equation*}
+\frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}(\cos   \theta_i^ \mathcal{A}   \cos   \theta_j^ \mathcal{B}  )}= -\frac{1}{2} (1+\kappa^ \mathcal{A}   \kappa^ \mathcal{B}   C_{ij} \cos  \theta_{i}^{ \mathcal{A}  } \cos  \theta_{j}^{ \mathcal{B}  } )\log \lvert \cos  \theta_{i}^{ \mathcal{A}  } \cos  \theta_{j}^{ \mathcal{B}  } \rvert ,
+\tag{2.18}
+\end{equation*}
+从而建立起$\cos  \theta^ \mathcal{A}   \cos  \theta^ \mathcal{B}  $分布与自旋关联矩阵之间的函数关系。
+
+为了简化该表达式在具体实验数据上的应用，引入不对称度A的概念，关于变量x的不对称度定义为
+\begin{equation*}
+A_x=\frac{N_x^+ -N_x^- }{N_x^+ +N_x^- },
+\tag{2.19}
+\end{equation*}
+\noindent 其中$N_x^+$($N_x^-$)表示变量x>0(x<0)的事件数，故有
+\begin{equation*}
+N_x^+=\int_{0}^{x_max} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x, N_x^-=\int_{x_min}^{0} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x.
+\tag{2.20}
+\end{equation*}
+
+
+
+
+
+

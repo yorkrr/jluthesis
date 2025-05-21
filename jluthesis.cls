@@ -89,10 +89,10 @@
         \songti \zihao{3} \bfseries 中文题目 \hspace{-0.4cm} \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@ctitlef}}  \\[3pt]
                                     \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@ctitles}}  \\
         \songti \zihao{3} \bfseries 英文题目 \hspace{-0.4cm} \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitlef}}  \\[3pt]
-                                    \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitles}}  
+                                    \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitles}}
                                     % \\[3pt]
                                     % 注释掉以下这行, 因为 \cover@etitlet 未定义. 如果要使用第三行英文标题, 建议在 jluthesis.cfg 中定义 \cover@etitlet.
-                                    % \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitlet}}  
+                                    % \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitlet}}
                                     \\[2.3cm]
 
 
@@ -133,7 +133,7 @@
 }
 \fancypagestyle{style@normal}{
 	\fancyhead{}
-	\fancyhead[C]{\zihao{-4} \kaishu 吉林大学\hspace{0.5em}计算机科学与技术学院\hspace{0.5em}毕业论文}
+	\fancyhead[C]{\zihao{-4} \kaishu 吉林大学\hspace{0.5em}物理学院\hspace{0.5em}毕业论文}
 	\fancyfoot{}
 	\fancyfoot[R]{\zihao{-5} \thepage}
 	\renewcommand{\headrulewidth}{0.4pt}
@@ -199,12 +199,12 @@
     \begin{center}
         \zihao{4} \songti \bfseries \abstract@eabstract % 摘要标题四号字
     \end{center}
-    
+
     \zihao{-4} \songti #1 % 摘要正文小四号字
     \bigskip
 
     \noindent \zihao{4} \songti {\bfseries {\abstract@ekeywords}}
-    
+
     \zihao{-4} \songti #2
 }
 
