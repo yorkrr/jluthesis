@@ -13,7 +13,7 @@
 
 混合态无法被表示为一个态矢，而只能表示为密度矩阵的形式。混合态的密度矩阵是各纯态密度矩阵概率性的混合，有
 \begin{equation*}
-\rho_{mixed}=\sum_{a=1}^N p_a\rho_a ,\quad \sum_{a=1}^N p_a=1,
+\rho_{\text{mixed}}=\sum_{a=1}^N p_a\rho_a ,\quad \sum_{a=1}^N p_a=1,
 \tag{2.1}
 \end{equation*}
 \noindent 其中$ p_a $是系综内子态$ a $的占比，$ \rho_a $是子态$ a $的投影算符。对于混合态，有$ \mathrm{Tr}(\rho^2)<1 $。
@@ -45,7 +45,7 @@
 \rho=\sum_{a=1}^{N}p_a\rho_{a}^{\mathcal{A}}\otimes \rho_{a}^{\mathcal{B}},
 \tag{2.4}
 \end{equation*}
-\noindent 其中$p_a$是各子态的概率分布，$\rho_{a}^{\mathcal{A}}$和$\rho_{a}^{\mathcal{B}}$是子系统的任意能够满足以上条件的密度矩阵，则该混合态是可分态，不存在纠缠。反之则是纠缠态。$N=1,p_1=1$的特例对应纯态是否可分的情形。
+\noindent 其中$p_a$是各子态的概率分布，$\rho_{a}^{\mathcal{A}}$和$\rho_{a}^{\mathcal{B}}$是子系统的任意能够满足以上条件的密度矩阵，则该混合态是可分态，不存在纠缠。反之则是纠缠态。$N=1$，$p_1=1$的特例对应纯态是否可分的情形。
 
 然而，该定义在处理复杂问题时并不实用。Peres-Horodecki判据，亦被称为部分转置正定(PPT)判据[14][15]，是本研究采用的更利于计算的纠缠判断方法。PPT判据指出，对于两体密度矩阵，若其经过部分转置(以对子系统$\mathcal{B}$操作为例)后得到的算符$\rho^{T_{\mathcal{B}}}$的本征值存在负值，则该密度矩阵表示纠缠态。更有必要强调的是，该判据对于所研究的$2\otimes2$维情形是充分必要条件。
 
@@ -153,19 +153,90 @@ R_{ab,\overline{a} \overline{b} }=\overline{\sum_{\text{initial}}} M( \mathcal{X
 \end{equation*}
 从而建立起$\cos  \theta^ \mathcal{A}   \cos  \theta^ \mathcal{B}  $分布与自旋关联矩阵之间的函数关系。
 
-为了简化该表达式在具体实验数据上的应用，引入不对称度A的概念，关于变量x的不对称度定义为
+为了简化该表达式在具体实验数据上的应用，引入不对称度$A$的概念，关于变量$x$的不对称度定义为
 \begin{equation*}
 A_x=\frac{N_x^+ -N_x^- }{N_x^+ +N_x^- },
 \tag{2.19}
 \end{equation*}
-\noindent 其中$N_x^+$($N_x^-$)表示变量x>0(x<0)的事件数，故有
+\noindent 其中$N_x^+$($N_x^-$)表示变量$x>0$($x<0$)的事件数，故有
 \begin{equation*}
-N_x^+=\int_{0}^{x_max} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x, N_x^-=\int_{x_min}^{0} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x.
+N_x^+=\int_{0}^{x_{\text{max}}} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x, \quad N_x^-=\int_{x_{\text{min}}}^{0} \frac{1}{\sigma} \frac{ \text{d}\sigma}{ \text{d}x}  \text{d}x.
 \tag{2.20}
 \end{equation*}
+当$x=\cos  \theta_i^ {\mathcal{A}}   \cos  \theta_j^ {\mathcal{B}}$  时，(2.18)式左侧可用不对称度表示，从而得到自旋关联矩阵的计算式
+\begin{equation*}
+C_{ij}=\frac{4}{\kappa^ {\mathcal{A}}   \kappa^ {\mathcal{B}}  } (A_{\cos  \theta_i^ {\mathcal{A} }  \cos  \theta_j^ {\mathcal{B} } }).
+\tag{2.21}
+\end{equation*}
 
+\subsection{螺旋度基}
+\label{sec:twoptwopfour}
 
+基向量的选择会影响衰变产物的动量方向与坐标轴之间的夹角的计算。通常的做法是在$\tau \bar{\tau}$ 系统的质心参考系下选择固定的$\{ \hat{x} , \hat{y}, \hat{z} \}$基，其中$\hat{z}$ 沿着对撞机的束流方向，而$\hat{x}$和$\hat{y}$固定在垂直于$\hat{z}$方向的平面上。本研究使用螺旋度基：在$\tau \bar{\tau} $系统的质心参考系下定义$\{ \hat{r} , \hat{k}, \hat{n} \}$基，其中$\hat{k}$沿着$\tau^+$的出射方向，并有
+\begin{equation*}
+\begin{aligned}
+\hat{r} &=\frac{1}{\sin \theta } (\hat{z} -\cos  \theta \hat{k} ), \\
+\hat{n} &=\hat{r} \times \hat{k},
+\end{aligned}
+\tag{2.22}
+\end{equation*}
+\noindent 其中$\cos  \theta =\hat{k} \cdot \hat{z}$，$\hat{r}$方向与$\hat{z}$ 在垂直于$\hat{k}$方向的分量方向一致。参考文献[8]中的图1直观展示了这两种基的定义方式。
+\begin{figure}[htb]
+\centering
+\includegraphics[height=5.0cm]{figures/2310}
+\caption{螺旋度基}
+\label{fig:helicitybasis}
+\end{figure}
 
+\section{量子层析技术在$pp\to \tau \bar{\tau}$过程中的应用}
+\label{sec:twopthree}
 
+\subsection{$pp \to \tau \bar{\tau}$过程简述}
+\label{sec:twopthreepone}
 
+质子由两个上夸克和一个下夸克通过胶子在强相互作用下构成。高能条件下质子-质子对撞时，主要发生相互作用的有质子内部的海夸克和胶子。
 
+对于$pp \to \tau \bar{\tau}$过程，中间媒介子可能是Z玻色子或虚光子。而在Z玻色子的所有衰变通道中，$\mathrm{Z} \to \tau \bar{\tau}$的分支比为3.37\%[18]。
+
+\subsection{衰变通道选择}
+\label{sec:twopthreeptwo}
+$\tau$的静止质量是1.777 GeV，较大的质量使得$\tau$ 能够迅速发生衰变。以$\tau^-$为例，其衰变通道主要有四种，如下表所示：
+\begin{table}[htbp]
+  \centering
+  \caption{$\tau$ 子衰变通道比较}
+  \label{tab:tau-decay}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{c c c}
+    \toprule[1.5pt]
+    衰变通道 & 分支比[19] & 自旋分析能力[7] \\
+    \midrule[1pt]
+    $\tau^-\to e^- + \bar{\nu}_e + \nu_\tau$ & 17.82\% & -0.33 \\
+    $\tau^-\to \mu^- + \bar{\nu}_\mu + \nu_\tau$ & 17.39\% & -0.34 \\
+    $\tau^-\to \pi^- + \nu_\tau$ & 10.82\% & 1.00 \\
+    $\tau^-\to \pi^- + \pi^0 + \nu_\tau$ & 25.49\% & 0.41 \\
+    \bottomrule[1.5pt]
+  \end{tabular}
+\end{table}
+
+研究中选择的通道是$\tau^- \to \pi^- + \nu_{\tau}$ ，综合考虑后发现利用该过程计算自旋关联矩阵最有利。由表可知，前两种轻子型衰变的分支比之和达到了35.21\%，但由于轻子型衰变会产生两个中微子，增加了重建难度和运动学信息的不准确性；另一种强子型衰变尽管有着更高的分支比，但自旋分析能力较低，意味着衰变产物与母粒子自旋信息的相关性弱；$\tau^- \to \pi^- + \nu_{\tau}$ 过程有着最高的自旋分析能力，利用机器学习的数据增强可以克服分支比较小的劣势，故最终被选定。
+
+对应2.2.2节中的$ \mathcal{X} \mathcal{Y}  \to  \mathcal{A} \mathcal{B}  \to (a_1 a_2)(b_1 b_2)$，此研究过程为$pp \to \tau^+ \tau^- \to (\pi^+ \bar{\nu}_{\tau}) (\pi^- \nu_{\tau})$。全过程的费曼图如下所示：
+\begin{figure}[htb]
+\centering
+\includegraphics[height=6.0cm]{figures/feynman}
+\caption{全过程费曼图}
+\label{fig:feynman}
+\end{figure}
+
+\subsection{参考系变换以及螺旋度基的具体实现}
+\label{sec:twopthreepthree}
+在通过机器学习方法重建出中微子的四动量信息后，所有衰变产物在实验室系下的四动量信息可被取得。为了计算质心系中定义的螺旋度基的基向量与$\tau$静止系下的$\pi$动量方向之间的夹角，尚需要执行以下步骤：
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\item[\uppercase\expandafter{\romannumeral1}.] 利用动量守恒，求出$\tau^+ \tau^-$对的四动量；
+\item[\uppercase\expandafter{\romannumeral2}.] 利用洛伦兹变换，将所有粒子的动量转换到$\tau^+ \tau^-$对的质心系下；
+\item[\uppercase\expandafter{\romannumeral3}.] 在质心系中利用$\tau^+$动量方向定义一组螺旋度基；
+\item[\uppercase\expandafter{\romannumeral4}.] 将各衰变产物的动量分别从质心系变换至其母粒子的静止参考系，即$\pi^+$对应$\tau^+$静止系，$\pi^-$对应$\tau^-$静止系。
+\end{itemize}
+此时得到的$\pi$动量方向便可用于计算该单个事件的目标角度。在完成所有事件的统计后可获得$\cos  \theta^ {\mathcal{A}}   \cos  \theta^ {\mathcal{B}}$  分布，最终计算不对称度以及自旋关联矩阵。
