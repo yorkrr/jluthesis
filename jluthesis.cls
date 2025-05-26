@@ -81,26 +81,27 @@
 \newcommand{\makecover}{
     \begin{titlepage}
         \newcommand{\HRule}{\rule{\linewidth}{1mm}}
-        \quad \\[0.42cm]
-        {\centering\includegraphics[width = 0.89 \textwidth]{figures/logo.png}\\[0.77cm] }
+        \quad \\[0.22cm]
+        {\centering\includegraphics[width = 0.89 \textwidth]{figures/logo3.png}\\[-0.3cm] }
         \center
-        \songti \zihao{-0} \bfseries 本科生毕业论文（设计）  \\[2.43cm]
+        \songti \zihao{-0} \bfseries 本科生毕业论文（设计）  \\[2.13cm]  %[2.43cm]
 
         \songti \zihao{3} \bfseries 中文题目 \hspace{-0.4cm} \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@ctitlef}}  \\[3pt]
                                     \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@ctitles}}  \\
-        \songti \zihao{3} \bfseries 英文题目 \hspace{-0.4cm} \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitlef}}  \\[3pt]
-                                    \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitles}}
+        \songti \zihao{3} \bfseries 英文题目 \hspace{-0.4cm} \underline{\makebox[11cm]{\songti \zihao{-4} \bfseries \cover@etitlef}}  \\[3pt]
+                                    \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{-4} \bfseries \cover@etitles}}
                                     % \\[3pt]
                                     % 注释掉以下这行, 因为 \cover@etitlet 未定义. 如果要使用第三行英文标题, 建议在 jluthesis.cfg 中定义 \cover@etitlet.
                                     % \hspace{2cm}    \underline{\makebox[11cm]{\songti \zihao{3} \bfseries \cover@etitlet}}
-                                    \\[2.3cm]
+                                    \\[1.8cm]  %[2.3cm]
+\newlength{\underlinewidth}
+\setlength{\underlinewidth}{\dimexpr (11cm - 5em) / 3 \relax}
 
-
-        \songti \zihao{3} \bfseries 学生姓名            \underline{\makebox[11cm]{\cover@author}}  \\[3pt]
-        \songti \zihao{3} \bfseries 学\hspace{2em}号    \underline{\makebox[11cm]{\cover@studentid}}  \\[3pt]
+        \songti \zihao{3} \bfseries 学生姓名            \underline{\makebox[\underlinewidth]{\cover@author}}班级 \underline{\makebox[\underlinewidth]{\cover@class}}学号 \underline{\makebox[\underlinewidth]{\cover@studentid}} \\[3pt]
         \songti \zihao{3} \bfseries 学\hspace{2em}院    \underline{\makebox[11cm]{\cover@school}}  \\[3pt]
         \songti \zihao{3} \bfseries 专\hspace{2em}业    \underline{\makebox[11cm]{\cover@major}}  \\[3pt]
-        \songti \zihao{3} \bfseries 指导教师            \underline{\makebox[11cm]{\cover@mentor}} \\[1.9cm]
+        \songti \zihao{3} \bfseries 指导教师            \underline{\makebox[11cm]{\cover@mentor}} \\[3pt]
+        \songti \zihao{3} \bfseries \hspace{4em} \underline{\makebox[11cm]{\cover@mentors}} \\[1.9cm]
 
         {\songti \zihao{3} \bfseries \cover@time}
         \vfill
@@ -168,17 +169,17 @@
 \newcommand{\cabstract}[2]{
     \pagestyle{style@empty}
     \setlength{\baselineskip}{18pt}
-    \chapter*{\textnormal{\zihao{-3} \songti \cover@ctitle}}
+    \chapter*{}
     \thispagestyle{style@empty}
     \bigskip
     \begin{center}
-        \zihao{4} \songti \bfseries \abstract@cabstract % 摘要标题四号字
+        \zihao{3} \songti \bfseries \abstract@cabstract % 摘要标题四号字，三号！
     \end{center}
 
     \zihao{-4} \songti #1 % 摘要正文小四号字
     \bigskip
 
-    \noindent \zihao{4} \songti {\bfseries {\abstract@ckeywords}}
+    \noindent \zihao{-4} \songti {\bfseries {\abstract@ckeywords}}
 
     \zihao{-4} \songti #2
 }
@@ -188,22 +189,17 @@
 \newcommand{\eabstract}[2]{
     \pagestyle{style@empty}
     \setlength{\baselineskip}{18pt}
-    \chapter*{\textnormal{\zihao{-3} \songti \cover@etitle}}
+    \chapter*{}
     \thispagestyle{style@empty}
-    \begin{flushright}
-        \zihao{-3}
-        Author: \cover@eauthor
-
-        Supervisor: \cover@ementor
-    \end{flushright}
+    \bigskip
     \begin{center}
-        \zihao{4} \songti \bfseries \abstract@eabstract % 摘要标题四号字
+        \zihao{3} \songti \bfseries \abstract@eabstract % 摘要标题四号字
     \end{center}
 
     \zihao{-4} \songti #1 % 摘要正文小四号字
     \bigskip
 
-    \noindent \zihao{4} \songti {\bfseries {\abstract@ekeywords}}
+    \noindent \zihao{-4} \songti {\bfseries {\abstract@ekeywords}}
 
     \zihao{-4} \songti #2
 }
@@ -228,11 +224,11 @@
 \setlength{\cftbeforesecskip}{10.5pt}                          % section 间隔
 \setlength{\cftbeforesubsecskip}{10.5pt}                       % subsection 间隔
 \setlength{\cftchapindent}{0pt}                             % 设置 chapter 部分缩进
-\setlength{\cftsecindent}{10pt}	                            % 设置 section 部分缩进
-\setlength{\cftsubsecindent}{20pt}                          % 设置 subsubsection 缩进
-\settowidth{\cftchapnumwidth}{\cftsecfont 1.1}              % 设置 chapter 内容部分缩进
-\settowidth{\cftsecnumwidth}{\cftsecfont 1.1}               % 设置 section 内容部分缩进
-\settowidth{\cftsubsecnumwidth}{\cftsecfont 1.1}            % 设置 subsection 内容部分缩进
+\setlength{\cftsecindent}{1em}	                            % 设置 section 部分缩进
+\setlength{\cftsubsecindent}{2em}                          % 设置 subsubsection 缩进
+\settowidth{\cftchapnumwidth}{\cftsecfont 1\quad}              % 设置 chapter 内容部分缩进
+\settowidth{\cftsecnumwidth}{\cftsecfont 1.1\quad}               % 设置 section 内容部分缩进
+\settowidth{\cftsubsecnumwidth}{\cftsecfont 1.1.1\quad}            % 设置 subsection 内容部分缩进
 
 %-------------------------------------------------------------------------------
 %                版面及标题格式
@@ -243,7 +239,7 @@
     chapter = {
         format = \centering \zihao{3} \songti \bfseries,
         titleformat = \hspace{0pt}, % -10pt
-        beforeskip = {-20pt}, % -15pt
+        beforeskip = {-10pt}, % -15pt
         afterskip = {25pt}, % 5pt
         number = \arabic{chapter},
         pagestyle = style@normal
@@ -285,7 +281,7 @@
 \newcommand{\acknowledgement}[1]{
     \setlength{\baselineskip}{20pt}
     \chapter*{\zihao{-3} \songti 致\hspace{1em}谢}
-    \addcontentsline{toc}{chapter}{致\hspace{1em}谢}
+    \addcontentsline{toc}{chapter}{致谢}
     \markboth{\zihao{-5} \songti 致\hspace{1em}谢}{\zihao{-5} \songti 致\hspace{1em}谢} % 定制页眉
     \vspace{0.5cm}
     {\songti \zihao{-4} #1}

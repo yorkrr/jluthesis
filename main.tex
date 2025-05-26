@@ -7,6 +7,8 @@
 \usepackage{mathtools}
 \usepackage{array}
 \usepackage{cancel}
+\usepackage{url}
+\usepackage{gbt7714}
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame = single, tabsize = 4, fontsize=\footnotesize}
 
 \begin{document}
@@ -17,22 +19,23 @@
 \makecover
 
 
-
+\pagenumbering{Roman}
 % 中文摘要
 \input{data/cabstract}
-\thispagestyle{style@empty}
+\thispagestyle{style@onlyfoot}
 
 % 英文摘要
 \input{data/eabstract}
-\thispagestyle{style@empty}
+\thispagestyle{style@onlyfoot}
 
 % 目录
 \newpage
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 {
-    \pagestyle{style@empty}
+    \pagestyle{style@onlyfoot}
     \tableofcontents
     \clearpage
+    \addtocontents{toc}{\protect\thispagestyle{style@onlyfoot}}
 }
 
 % 正文

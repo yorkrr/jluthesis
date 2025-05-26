@@ -23,7 +23,7 @@
   \label{fig:neutrino}
 \end{figure}
 
-图4-1上方的直方图统计所有事件中中微子横向动量、赝快度和方位角的分布；下方的曲线对应各动量信息的生成数据与蒙特卡洛模拟数据二者的事件分布之比，其中浅色阴影部分表示$\pm 1\sigma$ 范围内的泊松误差。
+图4-1上方的直方图统计所有事件中中微子横向动量、赝快度和方位角的分布；下方的曲线对应各动量信息的生成数据与蒙特卡洛模拟数据二者的事件分布之比，其中浅色阴影部分表示均值$\mathrm{\pm 1}$个标准差 的泊松误差范围。
 
 由图可知，对于中微子动量，两个分布吻合得较好，体现出该机器学习方法强大的特征提取和生成能力。
 
@@ -46,7 +46,7 @@
   \label{fig:tau}
 \end{figure}
 
-图4-2中$\tau$ 子的动量信息保持有较高的吻合度，对于其不变质量，生成模型得到的结果在\textit{M}=1.777 GeV附近存在一定的展宽，但这实际上仍然是非常杰出的表现。
+图4-2中$\tau$ 子的动量信息保持有较高的吻合度，对于其不变质量，生成模型得到的结果在1.777 GeV附近存在一定的展宽，但这实际上仍然是非常杰出的表现。
 此外，还可以得到$\tau^+ \tau^-$对的质量和，该结果将在4.2.2节中与MMC方法比较时一并展现。
 
 \subsection{$\cos  \theta^{\mathcal{A}} \cos  \theta^{\mathcal{B}}$分布计算结果}
@@ -110,19 +110,19 @@
 \label{sec:fourptwo}
 \subsection{丢失质量计算器方法简述}
 \label{sec:fourptwopone}
-丢失质量计算器(MMC)[25]方法可以近似估计$\tau$子衰变产生的中微子的动量信息。对于本研究选用的衰变道，$\nu_{\tau}$ 中微子的信息是不可见的，$\pi$ 介子的信息是可见的。已知$\pi$ 介子的四动量，$\tau$ 子的不变质量，以及$\nu_{\tau}$与$\bar{\nu}_{\tau}$的缺失横向动量之和，有
+丢失质量计算器(Missing Mass Calculator，MMC)方法\cite{ref25}可以近似估计$\tau$子衰变产生的中微子的动量信息。对于本研究选用的衰变道，$\nu_{\tau}$ 中微子的信息是不可见的，$\pi$ 介子的信息是可见的。已知$\pi$ 介子的四动量，$\tau$ 子的不变质量，以及$\nu_{\tau}$与$\bar{\nu}_{\tau}$的缺失横向动量之和，有
 \begin{equation*}
 \begin{aligned}
-\cancel{E}_{T_x} &=p_{\text{mis}_1} \sin \theta_{\text{mis}_1} \cos \phi_{\text{mis}_1} +p_{\text{mis}_2} \sin \theta_{\text{mis}_2} \cos \phi_{\text{mis}_2},\\
-\cancel{E}_{T_y} &=p_{\text{mis}_1} \sin \theta_{\text{mis}_1} \sin \phi_{\text{mis}_1} +p_{\text{mis}_2} \sin \theta_{\text{mis}_2} \sin \phi_{\text{mis}_2},\\
-M_{\tau_1}^2 &=m_{\text{mis}_1}^2 + m_{\text{vis}_1}^2 + 2 \sqrt{p_{\text{vis}_1}^2 +m_{\text{vis}_1}^2} \sqrt{p_{\text{mis}_1}^2 +m_{\text{mis}_1}^2} - 2p_{\text{vis}_1} p_{\text{mis}_1} \cos \Delta \theta_{\text{vm}_1},\\
-M_{\tau_2}^2 &=m_{\text{mis}_2}^2 + m_{\text{vis}_2}^2 + 2 \sqrt{p_{\text{vis}_2}^2 +m_{\text{vis}_2}^2} \sqrt{p_{\text{mis}_2}^2 +m_{\text{mis}_2}^2} - 2p_{\text{vis}_2} p_{\text{mis}_2} \cos \Delta \theta_{\text{vm}_2},
+\cancel{E}_{T_x} &=p_{\text{mis}_1} \sin \theta_{\text{mis}_1} \cos \phi_{\text{mis}_1} +p_{\text{mis}_2} \sin \theta_{\text{mis}_2} \cos \phi_{\text{mis}_2}\text{,}\\
+\cancel{E}_{T_y} &=p_{\text{mis}_1} \sin \theta_{\text{mis}_1} \sin \phi_{\text{mis}_1} +p_{\text{mis}_2} \sin \theta_{\text{mis}_2} \sin \phi_{\text{mis}_2}\text{,}\\
+M_{\tau_1}^2 &=m_{\text{mis}_1}^2 + m_{\text{vis}_1}^2 + 2 \sqrt{p_{\text{vis}_1}^2 +m_{\text{vis}_1}^2} \sqrt{p_{\text{mis}_1}^2 +m_{\text{mis}_1}^2} - 2p_{\text{vis}_1} p_{\text{mis}_1} \cos \Delta \theta_{\text{vm}_1}\text{,}\\
+M_{\tau_2}^2 &=m_{\text{mis}_2}^2 + m_{\text{vis}_2}^2 + 2 \sqrt{p_{\text{vis}_2}^2 +m_{\text{vis}_2}^2} \sqrt{p_{\text{mis}_2}^2 +m_{\text{mis}_2}^2} - 2p_{\text{vis}_2} p_{\text{mis}_2} \cos \Delta \theta_{\text{vm}_2}\text{,}
 \end{aligned}
 \tag{4.1}
 \end{equation*}
-\noindent 其中下标$\text{mis}_1$指代$\nu_{\tau}$，下标$\text{mis}_2$指代$\bar{\nu}_{\tau} $，$\Delta \theta_{\text{vm}}$表示$\vec{p}_{\text{vis}}$与$\vec{p}_{\text{mis}}$之间的夹角，并且对于强子型衰变，$m_{\text{mis}}=0$。在这四个约束方程中共存在六个未知变量，即$\left( p, \theta ,\phi \right)_{\text{mis}_1}$，$\left( p, \theta ,\phi \right)_{\text{mis}_2} $，故该方程组欠定，具有无数个解。
+\noindent 其中下标$\text{mis}_1$指代$\nu_{\tau}$，下标$\text{mis}_2$指代$\bar{\nu}_{\tau} $，$\Delta \theta_{\text{vm}}$表示$\vec{p}_{\text{vis}}$与$\vec{p}_{\text{mis}}$之间的夹角，且对于强子型衰变，$m_{\text{mis}}=0$。在这四个约束方程中共存在六个未知变量，即$\left( p\text{, } \theta\text{, }\phi \right)_{\text{mis}_1}$，$\left( p\text{, } \theta \text{, }\phi \right)_{\text{mis}_2} $，故该方程组欠定，具有无数个解。
 
-MMC方法的核心思想便是通过遍历$\left( \phi_{\text{mis}_1} ,\phi_{\text{mis}_2} \right)$ 参数空间求解方程，得到一系列解及其对应的中微子动量和$\Delta R$值，其中$\Delta R=\sqrt{(\eta_{\text{vis}} -\eta_{\text{mis}})^2 + (\phi_{\text{vis}} -\phi_{\text{mis}})^2} $。其后直接将由蒙特卡洛模拟数据计算出的$\Delta R$分布作为所选衰变道假设应当服从的$\Delta R$分布，且其依赖于$p_{\tau}$大小发生变化。将各解的$\Delta R$值对照$\Delta R$分布给出该解更有可能正确的概率，亦即权重。当要获知某个量如$\textit{M}_{\tau \tau}$时，将各个解对应的$\textit{M}_{\tau \tau} $(可能相同)进行加权统计，从而得到$\textit{M}_{\tau \tau}$ 分布，分布中概率最大的位置即可作为$\textit{M}_{\tau \tau}$的最终估计值。
+MMC方法的核心思想便是通过遍历$\left( \phi_{\text{mis}_1} \text{, } \phi_{\text{mis}_2} \right)$ 参数空间求解方程，得到一系列解及其对应的中微子动量和$\Delta R$值，其中$\Delta R=\sqrt{(\eta_{\text{vis}} -\eta_{\text{mis}})^2 + (\phi_{\text{vis}} -\phi_{\text{mis}})^2} $。其后直接将由蒙特卡洛模拟数据计算出的$\Delta R$分布作为所选衰变道假设应当服从的$\Delta R$分布，且其依赖于$p_{\tau}$大小发生变化。将各解的$\Delta R$值对照$\Delta R$分布给出该解更有可能正确的概率，亦即权重。当要获知某个量如$\textit{M}_{\tau \tau}$时，将各个解对应的$\textit{M}_{\tau \tau} $(可能相同)进行加权统计，从而得到$\textit{M}_{\tau \tau}$ 分布，分布中概率最大的位置即可作为$\textit{M}_{\tau \tau}$的最终估计值。
 
 本研究中使用的MMC方法在原始版本基础上作了简化：对一个事件直接选择这样一个解，该解对应的$\Delta R$值处于$\Delta R$分布中概率最大的位置。
 
